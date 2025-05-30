@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RY Automation Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#vision&mission">Vision & Mission</a>
+        <a href="#projects">Projects</a>
+        <a href="#Certification&Complience">Certification & Complience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <img src="images/Company Logo.jpg" alt="Company Logo" class="logo">
+      <div class="header-text">
+        <h1>RY Automation Resources</h1>
+        <p>Empowering Industry Through Innovation</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-slider" id="services">
+    <div class="slider-title">
+      <h2> Services</h2>
+    </div>
+
+    <div class="slider-container">
+      <div class="slide">
+        <img src="images/PLC .jpg" alt="Slide 1" />
+        <div class="slide-text">
+          <h1>PLC Programming Service</h1>
+          <p>Programming, troubleshooting, and modifying logic for various PLC brands (Siemens, Omron, Wecon).</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="images/HMI.jpg" alt="Slide 2" />
+        <div class="slide-text">
+          <h1>SCADA / HMI Integration</h1>
+          <p>Designing and configuring monitoring and control systems using SCADA and HMI software.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="images/install.jpg" alt="Slide 3" />
+        <div class="slide-text">
+          <h1>VFD Programming / Installation</h1>
+          <p>Programming, troubleshooting, and wiring installation for various VFD brands (Sako, Invt, Wecon).</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="images/Testing and troubleshooting.jpg" alt="Slide 4" />
+        <div class="slide-text">
+          <h1>Basic Control Panel Wiring & Troubleshoot</h1>
+          <p>Make a wiring installation and troubleshooting of automation panel like push button, sensor, relays and safety component.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="images/Drawing.jpg" alt="Slide 5" />
+        <div class="slide-text">
+          <h1>Electrical Drawing</h1>
+          <p>Making a Drawing for electrical Diagram, Control panel, Pneumatic Diagram and P&ID Diagram.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Founded in 2025, RY Automation Resources is an emerging automation solutions provider led by a passionate team of engineering students dedicated to shaping the future of industrial automation in Malaysia. While still pursuing our academic journey, we are actively building real-world expertise by delivering smart, reliable, and cost-effective automation, control, and monitoring systems for small to medium enterprises and academic institutions.</p>
+    <p>Our growing capabilities include custom automation design, smart factory integration, and intelligent control systems using Programmable Logic Controllers (PLC), SCADA, and Internet of Things (IoT) technologies.</p>
+  </section>
+
+  <section class="section" id="vision&mission">
+    <h2>Vision & Mission Company</h2>
+    <h1>Vision Company</h1>
+    <p>To be a leading solution provider in the automation industry by delivering innovative, reliable, and efficient automation and system integration services that empower industrial growth and more efficient.</p>
+    <h1>Mission Company</h1>
+    <ul>
+      <li>To deliver high-quality automation and system integration services tailored to client needs.</li>
+      <li>To provide cutting-edge, cost-effective solutions that enhance industrial productivity and efficiency.</li>
+      <li>To build long-term partnerships through technical excellence, integrity, and customer satisfaction.</li>
+      <li>To continuously innovate and grow with advancements in automation technology.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-row">
+      <div class="project-video">
+        <video width="100%" controls>
+          <source src="Project .mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="project-description">
+        <h3>Power Up Car Absorber Production Line </h3>
+        <p>
+          This project have to repair & power up workstation on the production line which is to change the existing terminal box into the new wiring technology such as Sensor Valve Box & Modular Connector. Its involving i/o check, trace & replace broken component, designing the schematic diagram, wiring installation, plc programming, testing & troubleshooting. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Certification&Complience">
+    <h2>Certification & Compliance</h2>
+    <div class="certification-logos">
+        <img src="images/SSM.png" alt="SSM Logo" />
+        <img src="images/MOF.png" alt="MOF Logo" />
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> contact@ryautomation.com</p>
+    <p><strong>Phone:</strong> +60-XXX-XXXXXXX</p>
+    <p><strong>Location:</strong> Malaysia</p>
+    <p><strong>Follow us:</strong> LinkedIn | Facebook</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RY Automation Resources. All Rights Reserved.</p>
+  </footer>
+
+  <button id="back-to-top">↑ Back to Top</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+      const slider = document.querySelector(".slider-container");
+
+      function showSlide(index) {
+        if (index >= totalSlides) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = totalSlides - 1;
+        } else {
+          currentSlide = index;
+        }
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      window.nextSlide = function() {
+        showSlide(currentSlide + 1);
+      };
+
+      window.prevSlide = function() {
+        showSlide(currentSlide - 1);
+      };
+
+      showSlide(currentSlide);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+  </script>
+
+</body>
+</html>
